@@ -1,0 +1,5 @@
+plugins {
+    id 'xyz.jpenilla.run-paper' version '3.0.2'
+}
+
+apply from: "https://raw.githubusercontent.com/K1miram/mod-gradle-scripts/${mod_gradle_script_version}/mod.gradle"

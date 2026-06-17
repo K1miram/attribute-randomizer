@@ -1,0 +1,18 @@
+name: AttributeRandomizer
+main: com.kimiram.attributerandomizer.Main
+version: ${version}
+commands:
+  attribute-randomizer:
+    description: "Command for AttributeRandomizer management"
+    usage: "
+            /<command> [start | stop | reset]
+            /<command> reset [@s | @a | @p | etc.]
+            /<command> mode [on-timer | on-death]
+            /<command> period [20t | 5s | 5m | etc.]
+            /<command> amount <number>
+    "
+    permission: attribute-randomizer.command
+permissions:
+  attribute-randomizer.command:
+    description: "Allows using attribute-randomizer command"
+    default: op
