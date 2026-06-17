@@ -25,7 +25,7 @@ public class AttributeRandomizerMain {
     public static void init(FMLDedicatedServerSetupEvent event) {
         modVersion = ModList.get().getModContainerById(MOD_ID).get().getModInfo().getVersion().toString();
 
-        Config.file = FMLPaths.CONFIGDIR.get().resolve("attribute-randomizer.json");
+        Config.file = FMLPaths.GAMEDIR.get().resolve("config").resolve("attribute-randomizer.json");
 
         Config.readConfig();
 
