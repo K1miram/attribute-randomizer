@@ -4,7 +4,7 @@ import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerPlayer;
@@ -113,7 +113,7 @@ public class AttributeRandomizer {
 
     public static void setAttributes(Player player, List<ChangedAttribute> changes) {
         for (ChangedAttribute attribute: changes) {
-            player.getAttribute(BuiltInRegistries.ATTRIBUTE.get(ResourceLocation.parse(attribute.id)).get())
+            player.getAttribute(BuiltInRegistries.ATTRIBUTE.get(Identifier.parse(attribute.id)).get())
                     .setBaseValue(attribute.value);
         }
     }
@@ -151,7 +151,7 @@ public class AttributeRandomizer {
 
     public static void resetAttributes(Player player) {
         for (Attribute attribute : attributes) {
-            player.getAttribute(BuiltInRegistries.ATTRIBUTE.get(ResourceLocation.parse(attribute.id)).get())
+            player.getAttribute(BuiltInRegistries.ATTRIBUTE.get(Identifier.parse(attribute.id)).get())
                     .setBaseValue(attribute.defaultValue);
         }
     }

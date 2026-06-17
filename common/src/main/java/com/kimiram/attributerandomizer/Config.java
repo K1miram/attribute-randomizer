@@ -8,7 +8,7 @@ import com.mojang.serialization.DataResult;
 import com.mojang.serialization.JsonOps;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 
 import java.io.File;
 import java.nio.file.Files;
@@ -59,7 +59,7 @@ public record Config(
     public static List<AttributeRandomizer.Attribute> verifyAttributes(List<AttributeRandomizer.Attribute> attrs) {
         List<AttributeRandomizer.Attribute> attributes = new ArrayList<>();
         for (AttributeRandomizer.Attribute attribute: attrs) {
-            if (BuiltInRegistries.ATTRIBUTE.containsKey(ResourceLocation.parse(attribute.id()))) {
+            if (BuiltInRegistries.ATTRIBUTE.containsKey(Identifier.parse(attribute.id()))) {
                 attributes.add(attribute);
             } else {
                 LOGGER.warn("Attribute with id {} does not exist", attribute.id());
