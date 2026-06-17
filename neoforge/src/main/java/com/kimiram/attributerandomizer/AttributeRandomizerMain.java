@@ -5,6 +5,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLDedicatedServerSetupEvent;
 import net.neoforged.fml.loading.FMLPaths;
 import net.neoforged.neoforge.common.NeoForge;
@@ -22,7 +23,7 @@ import static com.kimiram.attributerandomizer.ModCommands.modVersion;
 @EventBusSubscriber(modid = MOD_ID)
 public class AttributeRandomizerMain {
     @SubscribeEvent
-    public static void init(FMLDedicatedServerSetupEvent event) {
+    public static void init(FMLCommonSetupEvent event) {
         modVersion = ModList.get().getModContainerById(MOD_ID).get().getModInfo().getVersion().toString();
 
         Config.file = FMLPaths.GAMEDIR.get().resolve("config").resolve("attribute-randomizer.json");
