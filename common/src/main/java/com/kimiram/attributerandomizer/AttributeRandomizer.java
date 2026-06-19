@@ -15,10 +15,7 @@ import net.minecraft.world.entity.player.Player;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class AttributeRandomizer {
     public static final List<Attribute> DEFAULT_ATTRIBUTES = List.of(
@@ -47,6 +44,7 @@ public class AttributeRandomizer {
     public static List<Boolean> doChange;
     public static long cnt;
     public static ServerBossEvent bossBar = new ServerBossEvent(
+            UUID.randomUUID(),
             Component.literal("Timer"),
             BossEvent.BossBarColor.WHITE,
             BossEvent.BossBarOverlay.PROGRESS
