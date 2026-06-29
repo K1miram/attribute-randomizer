@@ -11,6 +11,9 @@ import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.permissions.Permissions;
+
+import java.util.function.Predicate;
 
 public class ModCommands {
     public static String modVersion;
@@ -226,10 +229,13 @@ public class ModCommands {
         return 1;
     };
 
+    public static Predicate<CommandSourceStack> hasOp = source ->
+            source.permissions().hasPermission(Permissions.COMMANDS_ADMIN);
+
 
     public static void registerCommands(CommandDispatcher<CommandSourceStack> dispatcher) {
         dispatcher.register(
-                Commands.literal("attribute-randomizer").executes(arInfo)
+                Commands.literal("attribute-randomizer").executes(arInfo).requires(hasOp)
                         .then(Commands.literal("start").executes(arStart))
                         .then(Commands.literal("stop").executes(arStop))
                         .then(Commands.literal("amount").executes(arAmountInfo)
