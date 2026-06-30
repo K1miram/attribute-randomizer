@@ -13,6 +13,7 @@ public class OnPlayerDeath implements Listener {
     public void onPlayerDeath(PlayerDeathEvent event) {
         if (event.getEntity() instanceof Player player) {
             if (AttributeRandomizer.isEnabled && AttributeRandomizer.mode == AttributeRandomizer.Mode.ON_DEATH) {
+                AttributeRandomizer.resetAttributes(player);
                 List<AttributeRandomizer.ChangedAttribute> changes = AttributeRandomizer.getChanges();
                 AttributeRandomizer.setAttributes(player, changes);
                 if (AttributeRandomizer.sendChangesToPlayers) {
