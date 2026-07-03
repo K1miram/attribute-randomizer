@@ -1,21 +1,21 @@
 modLoader="javafml"
 loaderVersion="[1,)"
 license="${license}"
-issueTrackerURL=""
+issueTrackerURL="https://github.com/K1miram/attribute-randomizer/issues"
 
 [[mods]]
 modId="${mod_id}"
 version="${mod_version}"
 displayName="${mod_name}"
-displayURL=""
-logoFile=""
+displayURL="https://modrinth.com/project/a2l3d92F"
+logoFile="assets/attributerandomizer/icon.png"
 authors="Kimiram"
 description='''${mod_description}'''
 
 [[dependencies.${mod_id}]]
 modId="neoforge"
 type="required"
-versionRange="[21.3.0,)"
+versionRange="[21.11.0,)"
 ordering="NONE"
 side="BOTH"
 
