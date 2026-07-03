@@ -8,10 +8,11 @@
     "Kimiram"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "https://modrinth.com/project/a2l3d92F",
+    "sources": "https://github.com/K1miram/attribute-randomizer"
   },
   "license": "${license}",
+  "icon": "assets/attributerandomizer/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
