@@ -185,9 +185,9 @@ public class AttributeRandomizer {
     public record Attribute(String id, double minValue, double maxValue, double defaultValue) {
         public static final Codec<Attribute> CODEC = RecordCodecBuilder.create(instance -> instance.group(
                 Codec.STRING.fieldOf("id").forGetter(Attribute::id),
-                Codec.DOUBLE.fieldOf("minValue").forGetter(Attribute::minValue),
-                Codec.DOUBLE.fieldOf("maxValue").forGetter(Attribute::maxValue),
-                Codec.DOUBLE.fieldOf("defaultValue").forGetter(Attribute::defaultValue)
+                Codec.DOUBLE.fieldOf("min_value").forGetter(Attribute::minValue),
+                Codec.DOUBLE.fieldOf("max_value").forGetter(Attribute::maxValue),
+                Codec.DOUBLE.fieldOf("default_value").forGetter(Attribute::defaultValue)
         ).apply(instance, Attribute::new));
 
         public ChangedAttribute changeAttribute() {
